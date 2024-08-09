@@ -272,6 +272,7 @@ main{
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    cursor: pointer;
 }
 /* Query for fourth-section start  */
 @media(max-width:767px){
