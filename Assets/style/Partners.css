@@ -51,25 +51,18 @@ body {
     box-shadow: none;
 }
 
-.sub-menu{
-    position: relative;
-}
-
 /* query for nav start */
 
-@media only screen and (min-width:992px){
-    .nav-item:hover > .dropdown-menu , .dropend:hover > .dropdown-menu {
+@media screen and (min-width:992px){
+    .dropdown:hover > .dropdown-menu  {
         display: block;
-        margin-top: .125em;
+        margin-top: 0;
     }
-    .dropend:hover .dropdown-menu {
-        position: absolute;
-        top: 0;
-        left: 100%;
-        margin-left: .125;
-    }
-    .sub-menu{
-        margin-left: 8px !important;
+}
+
+@media(max-width:992px) {
+    .dropdown-item::after {
+        transform:rotate(90deg);
     }
 }
 
