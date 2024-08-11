@@ -22,8 +22,8 @@ body {
     margin: 0 15px;
 }
 
-.nav-item:hover .dropdown-menu {
-    display: block;
+.dropdown-menu {
+    transition: all 0.5;
 }
 
 .btn {
@@ -36,7 +36,7 @@ body {
 
 .dropdown-menu {
     border-radius: 15px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .btn:hover {
@@ -47,19 +47,21 @@ body {
 .dropdown-item:active {
     background-color: #eee;
 }
+.dropdown-item {
+    border-radius: 5px;
+}
 
-.navbar-toggler{
+.navbar-toggler {
     border: none;
 }
-.navbar-toggler:focus{
+
+.navbar-toggler:focus {
     box-shadow: none;
 }
 
-#x-icon{
-    display: none;
+.sub-menu{
+    margin-left: 8px !important;
 }
-
-
 /* nav end */
 
 /* main start */
@@ -105,6 +107,16 @@ main {
 }
 
 /* query for first-section start */
+@media only screen and (min-width:992px){
+    .nav-item:hover > .dropdown-menu , .dropend:hover .dropdown-menu {
+        display: block;
+    }
+    .dropend:hover .dropdown-menu {
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+}
 @media(max-width:767px) {
     .first-sec-text {
         margin: 30px 0;
@@ -204,6 +216,7 @@ main {
 }
 
 /* query for second-section start */
+
 @media (max-width:767px) {
     .second-section {
         padding: 50px 10px;
@@ -252,6 +265,7 @@ main {
 /* /* second-section end */
 
 /* third-section start */
+
 .third-section {
     padding: 40px;
     margin: 90px 0;
@@ -277,68 +291,67 @@ main {
 }
 
 
-#container{
-    display: flex;
-    justify-content: flex-start;
-    height: auto;
-    margin: auto 0;
+#container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
 }
 
-  #slider-container {
+#slider-container {
     max-width: 1400px;
     width: 85vw;
     position: relative;
     overflow: hidden;
     padding: 20px;
     margin-top: 20px;
-  }
-  
-  #slider-container #btn {
+}
+
+#slider-container #btn {
     position: absolute;
     top: calc(50% - 30px);
     height: 20px;
     width: 20px;
-    border-left: 8px solid black;
-    border-top: 8px solid  black;
+    border-left: 8px solid #00aa2f;
+    border-top: 8px solid #00aa2f;
     cursor: pointer;
-  }
-  
-  #slider-container #btn:hover {
+}
+
+#slider-container #btn:hover {
     transform: scale(1.2);
-  }
-  
-  #slider-container #btn.inactive {
-    border-color: black;
-  }
-  
-  #slider-container #btn:first-of-type {
+}
+
+#slider-container #btn.inactive {
+    border-color: #00aa2f;
+}
+
+#slider-container #btn:first-of-type {
     transform: rotate(-45deg);
     left: 10px
-  }
-  
-  #slider-container #btn:last-of-type {
+}
+
+#slider-container #btn:last-of-type {
     transform: rotate(135deg);
     right: 10px;
-  }
-  
-  #slider-container #slider {
+}
+
+#slider-container #slider {
     display: flex;
     width: 1000%;
-    height: 100%; 
+    height: 100%;
     transition: all .5s;
-  }
-  
-  #slider-container #slider .slide {
+}
+
+#slider-container #slider .slide {
     height: 100%;
     margin: auto 10px;
     display: grid;
     place-items: center;
-  }
+}
 
-  #slider-container #slider .slide span {
+#slider-container #slider .slide span {
     color: black;
-  }
-  
+}
+
 
 .card {
     box-shadow: 0 7px 26px #00000012;
@@ -355,6 +368,10 @@ main {
     overflow: hidden;
 }
 
+.card-image {
+    min-height: 100px;
+}
+
 .card-img-top:hover {
     transform: scale(1.1);
 }
@@ -368,35 +385,36 @@ main {
 
 .card-text {
     font-size: 13.09px;
-    line-height: 1.7;
+    /* line-height: 1.7; */
     margin: 0 0 0.9em 0;
 }
 
 
 /* query for third-section satrt */
-  @media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1100px) {
     #slider-container #slider .slide {
-      width: calc(2.5% - 20px);
+        width: calc(2.5% - 20px);
     }
-  }
-  
-  @media only screen and (max-width: 1100px) {
-    #slider-container #slider .slide {
-      width: calc(3.3333333% - 20px);
-    }
-  }
-  
-  @media only screen and (max-width: 900px) {
-    #slider-container #slider .slide {
-      width: calc(5% - 20px);
-    }
-  }
+}
 
-  @media only screen and (max-width: 550px) {
+@media only screen and (max-width: 1100px) {
     #slider-container #slider .slide {
-      width: calc(10% - 20px);
+        width: calc(3.3333333% - 20px);
     }
-  }
+}
+
+@media only screen and (max-width: 900px) {
+    #slider-container #slider .slide {
+        width: calc(5% - 20px);
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #slider-container #slider .slide {
+        width: calc(10% - 20px);
+    }
+}
+
 @media (max-width:767px) {
     .third-section {
         padding: 5px;
@@ -405,31 +423,49 @@ main {
     .second-heading h1 {
         font-size: 24px;
     }
-    .card{
+
+    .card {
         padding: 5px;
         margin-bottom: 10px;
     }
 
 }
+
 @media (max-width:425px) {
-    .card{
+    .card {
         padding: 5px;
         overflow: hidden;
     }
-    .card-img-top{
+
+    .card-img-top {
         width: 70px;
         margin: 10px 0 0 0;
     }
-    .card-text{
+
+    .card-text {
         font-size: 12px;
         margin-top: 0;
     }
-    .card-title{
+
+    .card-title {
         font-size: 18px;
         margin-top: 0;
         margin-bottom: 0.5em;
     }
-    
+
+}
+
+@media (max-width:250px) {
+    .card-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .card-image {
+        min-height: 50px;
+    }
 }
 
 /* query for third-section end */
@@ -437,6 +473,7 @@ main {
 /* third-section end */
 
 /* fourth-section start */
+
 .fourth-section {
     margin: 60px 0 20px 0;
     padding: 70px 10px 20px 10px;
@@ -564,6 +601,7 @@ main {
     color: #242948;
 }
 
+
 /* query for fourth-section start */
 @media (max-width:767px) {
     .list-num-3 {
@@ -577,11 +615,11 @@ main {
     }
 
     .list-num-text-1 a h3 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .list-num-text-1 p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .list-num-2 span {
@@ -591,11 +629,11 @@ main {
     }
 
     .list-num-text-2 a h3 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .list-num-text-2 p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .list-num-3 span {
@@ -605,11 +643,11 @@ main {
     }
 
     .list-num-text-3 a h3 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .list-num-text-3 p {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 

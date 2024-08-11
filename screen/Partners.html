@@ -48,8 +48,17 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Mobility</a></li>
-                            <li><a class="dropdown-item" href="#">Commerce</a></li>
-                            <li><a class="dropdown-item" href="#">Delivery</a></li>
+                            <li class="nav-item dropdown dropend">
+                                <a class="nav-link dropdown-toggle sub-menu" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Commerce
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Shop</a></li>
+                                    <li><a class="dropdown-item" href="#">Delivery</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Bykea For Business</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -164,19 +173,24 @@
 
             <div id="container">
                 <div id="slider-container">
-                    <span onclick="slideRight()" id="btn"></span>
+                    <span onclick="slideRight()" id="btn" class="z-1"></span>
                     <div id="slider">
                         <div class="slide">
                             <span>
                                 <div class="card">
-                                    <img src="../Assets/image/partner-section-card-image-1.png" class="card-img-top" alt="...">
+                                    <div class="card-image">
+                                        <img src="../Assets/image/partner-section-card-image-1.png" class="card-img-top"
+                                            alt="...">
+                                    </div>
                                     <div class="card-body">
                                         <h5 class="card-title">Earn More</h5>
-                                        <p class="card-text">A Bykea partner can earn up to double,
-                                            sometimes triple, the amount of
-                                            average wage. With the growing
-                                            demand of Bykea services, the
-                                            possibility is endless.</p>
+                                        <div class="card-txt">
+                                            <p class="card-text">A Bykea partner can earn up to double,
+                                                sometimes triple, the amount of
+                                                average wage. With the growing
+                                                demand of Bykea services, the
+                                                possibility is endless.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </span>
@@ -184,7 +198,8 @@
                         <div class="slide">
                             <span>
                                 <div class="card">
-                                    <img src="../Assets/image/partner-section-card-image-2.png" class="card-img-top" alt="...">
+                                    <img src="../Assets/image/partner-section-card-image-2.png" class="card-img-top"
+                                        alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">Your Vision. Our Goal</h5>
                                         <p class="card-text">Be in control of your future. As a Bykea partner, you are
@@ -196,7 +211,8 @@
                         <div class="slide">
                             <span>
                                 <div class="card">
-                                    <img src="../Assets/image/partner-section-card-image-3.png" class="card-img-top" alt="...">
+                                    <img src="../Assets/image/partner-section-card-image-3.png" class="card-img-top"
+                                        alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">Weekly Bonuses</h5>
                                         <p class="card-text">We believe that hard work should be rewarded. That is why
@@ -208,10 +224,12 @@
                         <div class="slide">
                             <span>
                                 <div class="card">
-                                    <img src="../Assets/image/partner-section-card-image-4.png" class="card-img-top" alt="...">
+                                    <img src="../Assets/image/partner-section-card-image-4.png" class="card-img-top"
+                                        alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">Flexible Hours</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the
                                             bulk of the card's content.</p>
                                     </div>
                                 </div>
@@ -220,7 +238,8 @@
                         <div class="slide">
                             <span>
                                 <div class="card">
-                                    <img src="../Assets/image/partner-section-card-image-5.png" class="card-img-top" alt="...">
+                                    <img src="../Assets/image/partner-section-card-image-5.png" class="card-img-top"
+                                        alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
                                         <p class="card-text">Be in control of your future. As a Bykea partner, you are
@@ -233,7 +252,7 @@
                     <span onclick="slideLeft()" id="btn"></span>
                 </div>
             </div>
-            
+
         </section>
 
         <!-- third-section end -->
@@ -253,7 +272,7 @@
                 </div>
 
                 <div class="row mt-5">
-                    <div class="col-md-7 col-12">
+                    <div class="col-md-7 col-12 mb-5">
                         <div class="fourth-sec-content">
                             <div class="list-num-1">
                                 <span>1</span>
@@ -333,93 +352,95 @@
     AOS.init();
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-    <script>
-        var container = document.getElementById('container')
-        var slider = document.getElementById('slider');
-        var slides = document.getElementsByClassName('slide').length;
-        var buttons = document.getElementsByClassName('btn');
-    
-    
-        var currentPosition = 0;
-        var currentMargin = 0;
-        var slidesPerPage = 0;
-        var slidesCount = slides - slidesPerPage;
-        var containerWidth = container.offsetWidth;
-        var prevKeyActive = false;
-        var nextKeyActive = true;
-    
-        window.addEventListener("resize", checkWidth);
-    
-        function checkWidth() {
-            containerWidth = container.offsetWidth;
-            setParams(containerWidth);
-        }
-    
-        function setParams(w) {
-            if (w < 551) {
-                slidesPerPage = 1;
+<script>
+    var container = document.getElementById('container')
+    var slider = document.getElementById('slider');
+    var slides = document.getElementsByClassName('slide').length;
+    var buttons = document.getElementsByClassName('btn');
+
+
+    var currentPosition = 0;
+    var currentMargin = 0;
+    var slidesPerPage = 0;
+    var slidesCount = slides - slidesPerPage;
+    var containerWidth = container.offsetWidth;
+    var prevKeyActive = false;
+    var nextKeyActive = true;
+
+    window.addEventListener("resize", checkWidth);
+
+    function checkWidth() {
+        containerWidth = container.offsetWidth;
+        setParams(containerWidth);
+    }
+
+    function setParams(w) {
+        if (w < 551) {
+            slidesPerPage = 1;
+        } else {
+            if (w < 901) {
+                slidesPerPage = 2;
             } else {
-                if (w < 901) {
-                    slidesPerPage = 2;
+                if (w < 1101) {
+                    slidesPerPage = 3;
                 } else {
-                    if (w < 1101) {
-                        slidesPerPage = 3;
-                    } else {
-                        slidesPerPage = 4;
-                    }
+                    slidesPerPage = 4;
                 }
             }
-            slidesCount = slides - slidesPerPage;
-            if (currentPosition > slidesCount) {
-                currentPosition -= slidesPerPage;
-            };
-            currentMargin = - currentPosition * (100 / slidesPerPage);
-            slider.style.marginLeft = currentMargin + '%';
-            if (currentPosition > 0) {
-                buttons[0].classList.remove('inactive');
-            }
-            if (currentPosition < slidesCount) {
-                buttons[1].classList.remove('inactive');
-            }
-            if (currentPosition >= slidesCount) {
-                buttons[1].classList.add('inactive');
-            }
         }
-    
-        setParams();
-    
-        function slideRight() {
-            if (currentPosition != 0) {
-                slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
-                currentMargin += (100 / slidesPerPage);
-                currentPosition--;
-            };
-            if (currentPosition === 0) {
-                buttons[0].classList.add('inactive');
-            }
-            if (currentPosition < slidesCount) {
-                buttons[1].classList.remove('inactive');
-            }
+        slidesCount = slides - slidesPerPage;
+        if (currentPosition > slidesCount) {
+            currentPosition -= slidesPerPage;
         };
-    
-        function slideLeft() {
-            if (currentPosition != slidesCount) {
-                slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
-                currentMargin -= (100 / slidesPerPage);
-                currentPosition++;
-            };
-            if (currentPosition == slidesCount) {
-                buttons[1].classList.add('inactive');
-            }
-            if (currentPosition > 0) {
-                buttons[0].classList.remove('inactive');
-            }
+        currentMargin = - currentPosition * (100 / slidesPerPage);
+        slider.style.marginLeft = currentMargin + '%';
+        if (currentPosition > 0) {
+            buttons[0].classList.remove('inactive');
+        }
+        if (currentPosition == slidesCount) {
+            buttons[1].classList.remove('inactive');
+        }
+        if (currentPosition >= slidesCount) {
+            buttons[1].classList.add('inactive');
+        }
+    }
+
+    setParams();
+
+    function slideRight() {
+        if (currentPosition != 0) {
+            slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
+            currentMargin += (100 / slidesPerPage);
+            currentPosition--;
         };
-    </script>
-    
+        if (currentPosition === 0) {
+            buttons[0].classList.add('inactive');
+        }
+        if (currentPosition == slidesCount) {
+            buttons[1].classList.remove('inactive');
+        }
+    };
+
+    function slideLeft() {
+        if (currentPosition != slidesCount) {
+            slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
+            currentMargin -= (100 / slidesPerPage);
+            currentPosition++;
+        };
+        if (currentPosition == slidesCount) {
+            buttons[1].classList.add('inactive');
+        }
+        if (currentPosition > 0) {
+            buttons[0].classList.remove('inactive');
+        }
+    };
+</script>
+
 
 </html>
