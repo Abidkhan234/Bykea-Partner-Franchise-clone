@@ -39,6 +39,7 @@ body {
 .dropdown-item:active {
     background-color: #eee;
 }
+
 .dropdown-item {
     border-radius: 5px;
 }
@@ -53,8 +54,8 @@ body {
 
 /* query for nav start */
 
-@media screen and (min-width:992px){
-    .dropdown:hover > .dropdown-menu  {
+@media screen and (min-width:992px) {
+    .dropdown:hover>.dropdown-menu {
         display: block;
         margin-top: 0;
     }
@@ -62,7 +63,7 @@ body {
 
 @media(max-width:992px) {
     .dropdown-item::after {
-        transform:rotate(90deg);
+        transform: rotate(90deg);
     }
 }
 
