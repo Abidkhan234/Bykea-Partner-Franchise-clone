@@ -42,8 +42,8 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-auto-close="outside"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Services
                         </a>
                         <ul class="dropdown-menu">
@@ -92,7 +92,7 @@
         <section class="first-section">
             <div class="container-fluid overflow-hidden">
                 <div class="row">
-                    <div class="col-md-6  col-12">
+                    <div class="col-md-6 col-12">
                         <div class="first-sec-text">
                             <h2>Become a Bykea Partner</h2>
                             <h4>Take charge of your future success by becoming a Bykea Partner.</h4>
@@ -200,7 +200,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Your Vision. Our Goal</h5>
                                         <p class="card-text">Be in control of your future. As a Bykea partner, you are
-                                            fully incharge of your work.</p>
+                                            fully in charge of your work.</p>
                                     </div>
                                 </div>
                             </span>
@@ -240,7 +240,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
                                         <p class="card-text">Be in control of your future. As a Bykea partner, you are
-                                            fully incharge of your work.</p>
+                                            fully in charge of your work.</p>
                                     </div>
                                 </div>
                             </span>
@@ -274,7 +274,7 @@
                             <div class="list-num-1">
                                 <span>1</span>
                                 <div class="list-num-text-1">
-                                    <a href="##">
+                                    <a href="##" id="downloadButton">
                                         <h3>Download</h3>
                                     </a>
                                     <p>Download the Bykea partner App</p>
@@ -284,17 +284,18 @@
                             <div class="list-num-2">
                                 <span>2</span>
                                 <div class="list-num-text-2">
-                                    <a href="##">
+                                    <a href="##" id="registerButton">
                                         <h3>Register</h3>
                                     </a>
                                     <p>Register and Verify your mobile number</p>
                                 </div>
                             </div>
+                            
 
                             <div class="list-num-3">
                                 <span>3</span>
                                 <div class="list-num-text-3">
-                                    <a href="##">
+                                    <a href="##" id="active">
                                         <h3>Activate</h3>
                                     </a>
                                     <p>Activate your account by providing your CNIC, drivers license, a picture, and
@@ -307,7 +308,7 @@
                     </div>
                     <div class="col-md-5 col-12">
                         <div class="fourth-sec-image">
-                            <img src="../Assets/image/partner-fourth-section-image.png" alt="...">
+                            <img src="../Assets/image/partner-fourth-section-image.png" alt="..." id="imageToChange">
                         </div>
                     </div>
                 </div>
@@ -340,104 +341,117 @@
 
     <!-- footer end  -->
 
-
-
-</body>
-
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+ <!-- yeha maine changes ki hai images keliye -->
 <script>
-    AOS.init();
+     document.getElementById('active').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior if necessary
+            document.querySelector('.fourth-sec-image img').src = '../Assets/image/3.jpeg '; // Path to the new image
+        }),
+        // Register button click handler
+        document.getElementById('registerButton').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior if necessary
+            document.querySelector('.fourth-sec-image img').src = '../Assets/image/2.jpeg '; // Path to the ~new image
+        });
+
+    document.getElementById('downloadButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior if necessary
+        document.querySelector('.fourth-sec-image img').src = '../Assets/image/partner-fourth-section-image.png'; // Path to the original image
+    });
 </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
+    <script>
+        // Slider code
+        var container = document.getElementById('container')
+        var slider = document.getElementById('slider');
+        var slides = document.getElementsByClassName('slide').length;
+        var buttons = document.getElementsByClassName('btn');
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+        var currentPosition = 0;
+        var currentMargin = 0;
+        var slidesPerPage = 0;
+        var slidesCount = slides - slidesPerPage;
+        var containerWidth = container.offsetWidth;
+        var prevKeyActive = false;
+        var nextKeyActive = true;
 
-<script>
-    var container = document.getElementById('container')
-    var slider = document.getElementById('slider');
-    var slides = document.getElementsByClassName('slide').length;
-    var buttons = document.getElementsByClassName('btn');
+        window.addEventListener("resize", checkWidth);
 
+        function checkWidth() {
+            containerWidth = container.offsetWidth;
+            setParams(containerWidth);
+        }
 
-    var currentPosition = 0;
-    var currentMargin = 0;
-    var slidesPerPage = 0;
-    var slidesCount = slides - slidesPerPage;
-    var containerWidth = container.offsetWidth;
-    var prevKeyActive = false;
-    var nextKeyActive = true;
-
-    window.addEventListener("resize", checkWidth);
-
-    function checkWidth() {
-        containerWidth = container.offsetWidth;
-        setParams(containerWidth);
-    }
-
-    function setParams(w) {
-        if (w < 551) {
-            slidesPerPage = 1;
-        } else {
-            if (w < 901) {
-                slidesPerPage = 2;
+        function setParams(w) {
+            if (w < 551) {
+                slidesPerPage = 1;
             } else {
-                if (w < 1101) {
-                    slidesPerPage = 3;
+                if (w < 901) {
+                    slidesPerPage = 2;
                 } else {
-                    slidesPerPage = 4;
+                    if (w < 1101) {
+                        slidesPerPage = 3;
+                    } else {
+                        slidesPerPage = 4;
+                    }
                 }
             }
+            slidesCount = slides - slidesPerPage;
+            if (currentPosition > slidesCount) {
+                currentPosition -= slidesPerPage;
+            };
+            currentMargin = - currentPosition * (100 / slidesPerPage);
+            slider.style.marginLeft = currentMargin + '%';
+            if (currentPosition > 0) {
+                buttons[0].classList.remove('inactive');
+            }
+            if (currentPosition == slidesCount) {
+                buttons[1].classList.remove('inactive');
+            }
+            if (currentPosition >= slidesCount) {
+                buttons[1].classList.add('inactive');
+            }
         }
-        slidesCount = slides - slidesPerPage;
-        if (currentPosition > slidesCount) {
-            currentPosition -= slidesPerPage;
+
+        setParams();
+
+        function slideRight() {
+            if (currentPosition != 0) {
+                slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
+                currentMargin += (100 / slidesPerPage);
+                currentPosition--;
+            };
+            if (currentPosition === 0) {
+                buttons[0].classList.add('inactive');
+            }
+            if (currentPosition == slidesCount) {
+                buttons[1].classList.remove('inactive');
+            }
         };
-        currentMargin = - currentPosition * (100 / slidesPerPage);
-        slider.style.marginLeft = currentMargin + '%';
-        if (currentPosition > 0) {
-            buttons[0].classList.remove('inactive');
-        }
-        if (currentPosition == slidesCount) {
-            buttons[1].classList.remove('inactive');
-        }
-        if (currentPosition >= slidesCount) {
-            buttons[1].classList.add('inactive');
-        }
-    }
 
-    setParams();
-
-    function slideRight() {
-        if (currentPosition != 0) {
-            slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
-            currentMargin += (100 / slidesPerPage);
-            currentPosition--;
+        function slideLeft() {
+            if (currentPosition != slidesCount) {
+                slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
+                currentMargin -= (100 / slidesPerPage);
+                currentPosition++;
+            };
+            if (currentPosition == slidesCount) {
+                buttons[1].classList.add('inactive');
+            }
+            if (currentPosition > 0) {
+                buttons[0].classList.remove('inactive');
+            }
         };
-        if (currentPosition === 0) {
-            buttons[0].classList.add('inactive');
-        }
-        if (currentPosition == slidesCount) {
-            buttons[1].classList.remove('inactive');
-        }
-    };
+       
+    </script>
 
-    function slideLeft() {
-        if (currentPosition != slidesCount) {
-            slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
-            currentMargin -= (100 / slidesPerPage);
-            currentPosition++;
-        };
-        if (currentPosition == slidesCount) {
-            buttons[1].classList.add('inactive');
-        }
-        if (currentPosition > 0) {
-            buttons[0].classList.remove('inactive');
-        }
-    };
-</script>
-
+</body>
 
 </html>
