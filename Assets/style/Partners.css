@@ -509,19 +509,19 @@ main {
 
 .list-num-text-1 a {
     text-decoration: none;
-    color: #00aa2f;
+    color: #242948;
     transition: all 0.3s;
 }
 
 .list-num-text-2 a {
     text-decoration: none;
-    color: #00aa2f;
+    color: #242948;
     transition: all 0.3s;
 }
 
 .list-num-text-3 a {
     text-decoration: none;
-    color: #00aa2f;
+    color: #242948;
     transition: all 0.3s;
 }
 
@@ -592,15 +592,15 @@ main {
 
 
 .list-num-1:hover span~.list-num-text-1 a {
-    color: #242948;
+    color: #00aa2f;
 }
 
 .list-num-2:hover span~.list-num-text-2 a {
-    color: #242948;
+    color: #00aa2f;
 }
 
 .list-num-3:hover span~.list-num-text-3 a {
-    color: #242948;
+    color: #00aa2f;
 }
 
 
