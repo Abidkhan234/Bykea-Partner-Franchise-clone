@@ -476,11 +476,16 @@ main {
     padding: 70px 10px 20px 10px;
     background-color: #fff;
 }
+.fourth-sec-image{
+    display: flex;
+    justify-content: center;
+}
 
 .fourth-sec-image img {
     max-width: 100%;
     height: auto;
 }
+
 
 .list-num-1,
 .list-num-2,

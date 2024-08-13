@@ -42,8 +42,8 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-auto-close="outside"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Services
                         </a>
                         <ul class="dropdown-menu">
@@ -290,7 +290,7 @@
                                     <p>Register and Verify your mobile number</p>
                                 </div>
                             </div>
-                            
+
 
                             <div class="list-num-3">
                                 <span>3</span>
@@ -345,23 +345,26 @@
     <script>
         AOS.init();
     </script>
- <!-- yeha maine changes ki hai images keliye -->
-<script>
-     document.getElementById('active').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior if necessary
-            document.querySelector('.fourth-sec-image img').src = '../Assets/image/3.jpeg '; // Path to the new image
-        }),
-        // Register button click handler
-        document.getElementById('registerButton').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior if necessary
-            document.querySelector('.fourth-sec-image img').src = '../Assets/image/2.jpeg '; // Path to the ~new image
-        });
 
-    document.getElementById('downloadButton').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior if necessary
-        document.querySelector('.fourth-sec-image img').src = '../Assets/image/partner-fourth-section-image.png'; // Path to the original image
-    });
-</script>
+    <!-- yeha maine changes ki hai images keliye start -->
+    <script>
+        document.getElementById('active').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default link behavior if necessary
+            document.querySelector('.fourth-sec-image img').src = '../Assets/image/Re-sixe partner-fourth-section-image-3.png'; // Path to the new image
+        }),
+            // Register button click handler
+            document.getElementById('registerButton').addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default link behavior if necessary
+                document.querySelector('.fourth-sec-image img').src = '../Assets/image/Re-size partner-fourth-section-image-2.png'; // Path to the ~new image
+            });
+
+        document.getElementById('downloadButton').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default link behavior if necessary
+            document.querySelector('.fourth-sec-image img').src = '../Assets/image/partner-fourth-section-image.png'; // Path to the original image
+        });
+    </script>
+
+    <!-- yeha maine changes ki hai images keliye end -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -449,7 +452,7 @@
                 buttons[0].classList.remove('inactive');
             }
         };
-       
+
     </script>
 
 </body>
