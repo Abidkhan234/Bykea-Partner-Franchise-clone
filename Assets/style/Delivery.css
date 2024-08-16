@@ -73,6 +73,10 @@ body {
 
 /* main start */
 
+main{
+    background-color: #f4f4f4;
+}
+
 /* first-section start */
 .first-section {
     background-color: #00aa2f;
@@ -135,7 +139,6 @@ body {
 .second-section {
     margin: 0 0 20px 0;
     padding: 70px 10px 20px 10px;
-    background-color: #eee;
 }
 
 .shop-heading {
@@ -375,7 +378,6 @@ body {
 
 /* third-section start */
 .third-section{
-    background-color: #fff;
     padding: 75px 0 0;
 }
 .second-heading {
@@ -444,7 +446,6 @@ body {
 
 /* fourth-section end */
 .fourth-section{
-    background-color: #fff;
     padding: 60px 0 60px 0;
 }
 .head-wrap{
